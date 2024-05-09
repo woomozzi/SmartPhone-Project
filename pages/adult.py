@@ -81,8 +81,8 @@ for question, options in questions_options.items():
     # 사용자가 선택한 옵션의 키를 딕셔너리에 저장
     user_responses[question] = selected_option_key
 
-# 모든 질문에 대한 사용자의 선택 출력
-st.write("선택한 옵션들:")
-for question, key in user_responses.items():
-    # 선택한 옵션의 키값과 해당 키에 대한 값을 출력
-    st.write(f"{question}: {key}")
+total_score_adult = sum(user_responses.values())
+
+st.session_state.total_score_adult = total_score_adult
+
+st.page_link("pages/result.py", label='확인')
