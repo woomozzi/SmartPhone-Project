@@ -6,7 +6,7 @@ plt.rcParams['font.family'] ='Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] =False
 
 # 시각화에 사용할 데이터 로드
-df = pd.read_csv("C:\WEBDEVELOP_0507\data\wepdata.csv", encoding='cp949')
+df = pd.read_csv("data\wepdata.csv", encoding='cp949')
 
 # ------------ 점수 변수 초기화 코드-------------
 if 'total_score' not in st.session_state:
