@@ -3,7 +3,7 @@ import streamlit as st
 name = st.session_state.name
 
 st.set_page_config(
-    page_title = "kids",
+    page_title = "kids !",
     page_icon = "👋"
 )
 
