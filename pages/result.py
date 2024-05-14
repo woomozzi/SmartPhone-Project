@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from powerbiclient import Report, models
+from IPython.display import IFrame
+from PIL import Image
+import io
+import openai 
+import requests
 plt.rcParams['font.family'] ='Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] =False
-
 
 # ------------ 점수 변수 초기화 코드-------------
 if 'total_score' not in st.session_state:
@@ -62,3 +66,17 @@ else :
         overdose_adult(total_score_adult)
     elif age >= 60:
         overdose_adult_senior(total_score_adult)
+
+
+client = openai.OpenAI(api_key = "secret")
+
+# Call the API
+# 1장 생성 시 0.03$ 
+prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
+response = client.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
+
+image_url = response.data[0].url
+
+# 이미지를 가져와서 Streamlit에 표시
+image = Image.open(requests.get(image_url, stream=True).raw)
+st.image(image, caption='Generated Image', use_column_width=True)
