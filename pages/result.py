@@ -262,10 +262,10 @@ if total_score :
     overdose_kids(total_score)
     dash_kids()
 else :
-    if age >= 9 and age <= 24:
+    if age >= 9 and age <= 19:
         overdose_adult_teen(total_score_adult)
         dash_adult_teens()
-    elif age > 24 and age < 60:
+    elif age > 19 and age < 60:
         overdose_adult(total_score_adult)
         dash_adult()
     elif age >= 60:
@@ -278,24 +278,26 @@ else :
 
 # if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
 #     prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
-#     response = client.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
+#     response = client.images.generate(model="dall-e-3", prompt=prompt, size="600x800", quality="standard", n=1)
 
 #     image_url = response.data[0].url
 
 #     # 이미지를 가져와서 Streamlit에 표시
 #     image = Image.open(requests.get(image_url, stream=True).raw)
 #     st.subheader('당신의 미래모습..')
+#     st.markdown("---")
 #     st.image(image, caption='Generated Image', use_column_width=True)
 
 # if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
 #     prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
-#     response = client.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
+#     response = client.images.generate(model="dall-e-3", prompt=prompt, size="600x800", quality="standard", n=1)
 
 #     image_url = response.data[0].url
 
 #     # 이미지를 가져와서 Streamlit에 표시
 #     image = Image.open(requests.get(image_url, stream=True).raw)
 #     st.subheader('당신의 미래모습..')
+#     st.markdown("---")
 #     st.image(image, caption='Generated Image', use_column_width=True)
 
 if total_score :
@@ -308,9 +310,9 @@ else :
         solution_adult_teens_overdose()
     elif (age > 9 and age <= 19) and (total_score_adult < 23):
         solution_adult_teens_normal()
-    elif (age > 24 and age < 60) and (total_score_adult >= 24):
+    elif (age > 19 and age < 60) and (total_score_adult >= 24):
         solution_adult_overdose()
-    elif (age > 24 and age < 60) and (total_score_adult < 24):
+    elif (age > 19 and age < 60) and (total_score_adult < 24):
         solution_adult_normal()
     elif (age > 60) and (total_score_adult >= 24):
         solution_adult_senior_overdose()
