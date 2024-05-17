@@ -10,7 +10,7 @@ st.title("마지막")
 st.markdown("---")
 
 embed_code = """
-<iframe title="project2_마지막 페이지" width="800" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiYTY2ZGMyNTItNjcwNi00NTAyLTkwNTktNmE4MGI2ZjFmNzhkIiwidCI6ImU0ZmVkY2NkLWRlOWMtNGUxMS04NDY3LWI0Y2FjMTliYzIzMyJ9" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="project2_마지막 페이지 (1)" width="800" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiNjljM2I2NzktNDRhZS00NDFhLTgzZDUtZGQyYTE4OGIwMjdlIiwidCI6ImU0ZmVkY2NkLWRlOWMtNGUxMS04NDY3LWI0Y2FjMTliYzIzMyJ9" frameborder="0" allowFullScreen="true"></iframe>
 """
 st.markdown(embed_code, unsafe_allow_html=True)
 
@@ -24,7 +24,7 @@ client = gspread.authorize(creds)
 # Google Sheets 열기
 sheet = client.open("stop").sheet1
 
-st.subheader("댓글 시스템")
+st.subheader("댓글")
 
 user_name = st.text_input("이름")
 user_comment = st.text_area("댓글")
