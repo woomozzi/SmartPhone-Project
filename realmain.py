@@ -7,4 +7,4 @@ embed_code = """
 """
 st.markdown(embed_code, unsafe_allow_html=True)
 
-st.page_link("pages\main.py", label="설문하러가기", icon="✔️")
+st.page_link("pages/main.py", label="설문하러가기", icon="✔️")
