@@ -3,4 +3,4 @@
 ## 환보와 아이넷
 
 ### Web Link
-https://smartphone-project-nnx8ubnecygfmkhfrvhl5u.streamlit.app/
+https://smartphone-project-x8nrtqdmvu3vdchfntsunk.streamlit.app/
