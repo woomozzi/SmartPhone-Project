@@ -6,3 +6,5 @@ powerbiclient
 openai
 Pillow
 requests
+IPython
+IFrame
