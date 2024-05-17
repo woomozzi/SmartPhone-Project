@@ -41,9 +41,6 @@ st.subheader("댓글 목록")
 # Google Sheets에서 데이터 가져오기
 data = sheet.get_all_records()
 
-# 데이터가 올바르게 로드되었는지 확인하기 위해 데이터 출력
-st.write("데이터:", data)
-
 if data:
     # DataFrame으로 변환
     df = pd.DataFrame(data)
