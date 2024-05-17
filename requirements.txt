@@ -7,7 +7,5 @@ openai
 Pillow
 requests
 IPython
-IFrame
 gspread 
 oauth2client
-os
