@@ -7,4 +7,3 @@ openai
 Pillow
 requests
 IPython
-IFrame
