@@ -4,7 +4,13 @@ from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 import json
 import os
-
+st.markdown("""
+<style>
+.small-font {
+    font-size:12px
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.title("마지막")
 st.markdown("---")
@@ -15,7 +21,6 @@ embed_code = """
 st.markdown(embed_code, unsafe_allow_html=True)
 
 st.markdown("---")
-
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 # creds = ServiceAccountCredentials.from_json_keyfile_name("C:\WEBDEVELOP_0507\data\stop-423605-4544fb4199a8.json", scope)
 creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["stop_json"], scope)
@@ -25,7 +30,7 @@ client = gspread.authorize(creds)
 sheet = client.open("stop").sheet1
 
 st.subheader("댓글")
-
+st.markdown('<p class="small-font">개선해야 할 점과 여러분이 과의존을 예방하거나 극복한 방식을 자유롭게 적어주세요👨‍⚕️</p>',unsafe_allow_html=True)
 user_name = st.text_input("이름")
 user_comment = st.text_area("댓글")
 
@@ -53,3 +58,6 @@ if data:
         st.write(f"**{row['이름']}**: {row['댓글']}")
 else:
     st.info("댓글이 아직 없습니다.")
+
+st.markdown("---")
+st.link_button("상담받으러가기", "https://www.iapc.or.kr/contents.do?cid=50&idx=11")
