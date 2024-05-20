@@ -10,7 +10,7 @@ st.title("마지막")
 st.markdown("---")
 
 embed_code = """
-<iframe title="project2_마지막 페이지 (1)" width="800" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiNjljM2I2NzktNDRhZS00NDFhLTgzZDUtZGQyYTE4OGIwMjdlIiwidCI6ImU0ZmVkY2NkLWRlOWMtNGUxMS04NDY3LWI0Y2FjMTliYzIzMyJ9" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="project2_마지막 페이지 (2)" width="800" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiYjA3MDAyMTEtZjY5ZS00MmE3LWE2NmEtYzA0OGNjN2RmMjZmIiwidCI6ImU0ZmVkY2NkLWRlOWMtNGUxMS04NDY3LWI0Y2FjMTliYzIzMyJ9" frameborder="0" allowFullScreen="true"></iframe>
 """
 st.markdown(embed_code, unsafe_allow_html=True)
 
