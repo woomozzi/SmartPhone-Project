@@ -41,7 +41,7 @@ if st.button("댓글 제출"):
         st.success("댓글이 성공적으로 제출되었습니다.")
     else:
         st.warning("모든 필드를 입력해주세요.")
-
+st.markdown("---")
 st.subheader("댓글 목록")
 # Google Sheets에서 데이터 가져오기
 data = sheet.get_all_records()
