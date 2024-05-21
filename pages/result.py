@@ -321,7 +321,7 @@ if total_score:
             st.image(image, caption='Generated Image', use_column_width=True)
         st.markdown("---")
 
-else:
+if total_score_adult:
     if age > 9 and age <= 19:
         overdose_adult_teen(total_score_adult)
         dash_adult_teens()
