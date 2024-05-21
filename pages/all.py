@@ -1,9 +1,5 @@
 import streamlit as st
 import os
-from PyPDF2 import PdfReader
-from pdf2image import convert_from_path
-
-
 def main():
     st.title("프로젝트 요약")
 
@@ -15,18 +11,8 @@ def main():
         st.error("PDF file not found.")
         return
 
-    # PDF 파일 정보 가져오기
-    with open(pdf_path, "rb") as f:
-        pdf_reader = PdfReader(f)
-        num_pages = len(pdf_reader.pages)
-
-    st.write(f"Number of Pages: {num_pages}")
-
-    # PDF 파일을 이미지로 변환하여 Streamlit에 표시
-    st.write("PDF Pages:")
-    for i in range(num_pages):
-        page_image = convert_from_path(pdf_path, first_page=i+1, last_page=i+1)[0]
-        st.image(page_image, caption=f"Page {i+1}")
+    # PDF 파일을 iframe에 표시
+    st.write(f'<iframe src="{pdf_path}" width="700" height="1000"></iframe>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
