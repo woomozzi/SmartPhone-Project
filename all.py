@@ -4,7 +4,7 @@ from PyPDF2 import PdfFileReader
 from pdf2image import convert_from_path
 
 def main():
-    st.title("PDF Viewer with Streamlit")
+    st.title("요약정리")
 
     # PDF 파일 경로
     pdf_path = "data/project2_포폴.pdf"
