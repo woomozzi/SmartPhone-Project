@@ -329,36 +329,27 @@ else :
 
 
 #------------------------------- ai 이미지 출력 코드----------------------------------------
-openai.api_key = st.secrets["openapi_key"]["OPENAPI_KEY"]
+client = st.secrets["openapi_key"]["OPENAPI_KEY"]
 
-# 점수에 따라 이미지를 생성합니다
-if total_score >= 24:  # 과의존 위험군인 경우
-    prompt = f"나이가 {age}살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 {sex}자를 완전 무섭고 과장해서 그려줘"
-    response = openai.Image.create(
-        prompt=prompt,
-        n=1,
-        size="600x800"
-    )
+if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
+    prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
+    response = client.images.generate(model="dall-e-3", prompt=prompt, size="512x512", quality="standard", n=1)
 
-    image_url = response['data'][0]['url']
+    image_url = response.data[0].url
 
-    # 이미지를 가져와서 Streamlit에 표시합니다
+    # 이미지를 가져와서 Streamlit에 표시
     image = Image.open(requests.get(image_url, stream=True).raw)
     st.subheader('당신의 미래모습..')
     st.markdown("---")
     st.image(image, caption='Generated Image', use_column_width=True)
 
-if total_score_adult >= 24:  # 과의존 위험군인 경우
-    prompt = f"나이가 {age}살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 {sex}자를 완전 무섭고 과장해서 그려줘"
-    response = openai.Image.create(
-        prompt=prompt,
-        n=1,
-        size="600x800"
-    )
+if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
+    prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
+    response = client.images.generate(model="dall-e-3", prompt=prompt, size="512x512", quality="standard", n=1)
 
-    image_url = response['data'][0]['url']
+    image_url = response.data[0].url
 
-    # 이미지를 가져와서 Streamlit에 표시합니다
+    # 이미지를 가져와서 Streamlit에 표시
     image = Image.open(requests.get(image_url, stream=True).raw)
     st.subheader('당신의 미래모습..')
     st.markdown("---")
