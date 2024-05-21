@@ -329,7 +329,7 @@ else :
 
 
 #------------------------------- ai 이미지 출력 코드----------------------------------------
-client = openai_api_key = st.secrets["openapi_key"]["OPENAPI_KEY"]
+client = st.secrets["openapi_key"]["OPENAPI_KEY"]
 
 if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
     prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
