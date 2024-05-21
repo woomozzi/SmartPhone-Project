@@ -9,3 +9,5 @@ requests
 IPython
 gspread 
 oauth2client
+PyPDF2
+pdf2image
