@@ -340,7 +340,7 @@ if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
     # 이미지를 가져와서 Streamlit에 표시
     image = Image.open(requests.get(image_url, stream=True).raw)
     st.markdown("---")
-    with st.expander("당신의 계속 스마트폰을 사용한다면..", expanded=True):
+    with st.expander('당신의 계속 스마트폰을 사용한다면..', expanded=True):
         st.image(image, use_column_width=True)
 
 if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
@@ -352,7 +352,7 @@ if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생
     # 이미지를 가져와서 Streamlit에 표시
     image = Image.open(requests.get(image_url, stream=True).raw)
     st.markdown("---")
-    with st.expander("당신의 계속 스마트폰을 사용한다면..", expanded=True):
+    with st.expander('당신의 계속 스마트폰을 사용한다면..', expanded=True):
         st.image(image, use_column_width=True)
 
 
