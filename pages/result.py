@@ -323,7 +323,7 @@ if total_score:
         st.markdown("---")
 
 else:
-    if age >= 9 and age <= 19:
+    if age > 9 and age <= 19:
         overdose_adult_teen(total_score_adult)
         dash_adult_teens()
     elif age > 19 and age < 60:
