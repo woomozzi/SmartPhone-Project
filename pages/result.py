@@ -336,7 +336,7 @@ def generate_image(age, sex):
     response = openai.Image.create(
         prompt=prompt,
         n=1,
-        size="512x512"  # 가능한 이미지 크기
+        size="1024x1024"  # 가능한 이미지 크기
     )
 
     image_url = response['data'][0]['url']
