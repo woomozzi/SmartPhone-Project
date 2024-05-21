@@ -8,7 +8,7 @@ def main():
     st.title("PDF Viewer with Streamlit")
 
     # PDF 파일 경로
-    pdf_path = "path/to/your/pdf/file.pdf"
+    pdf_path = "data\project2_포폴.pdf"
 
     # PDF 파일이 존재하는지 확인
     if not os.path.exists(pdf_path):
