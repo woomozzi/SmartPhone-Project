@@ -333,7 +333,7 @@ openai.api_key = st.secrets["openapi_key"]["OPENAPI_KEY"]
 
 if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
     prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
-    response = openai.images.generate(model="dall-e-3", prompt=prompt, size="512x512", quality="standard", n=1)
+    response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
 
     image_url = response.data[0].url
 
@@ -342,11 +342,11 @@ if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
     st.markdown("---")
     st.subheader('당신의 계속 스마트폰을 사용한다면..')
     st.markdown("---")
-    st.image(image, caption='Generated Image', use_column_width=True)
+    st.image(image, use_column_width=True)
 
 if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
     prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
-    response = openai.images.generate(model="dall-e-3", prompt=prompt, size="512x512", quality="standard", n=1)
+    response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
 
     image_url = response.data[0].url
 
@@ -355,7 +355,7 @@ if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생
     st.markdown("---")
     st.subheader('당신의 계속 스마트폰을 사용한다면..')
     st.markdown("---")
-    st.image(image, caption='Generated Image', use_column_width=True)
+    st.image(image, use_column_width=True)
 
 if total_score :
     if total_score >= 24:
