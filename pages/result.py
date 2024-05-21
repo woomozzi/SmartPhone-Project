@@ -238,7 +238,6 @@ def solution_adult_overdose():
             <p class="small-font">김은영ᆞ김지영ᆞ박선영, ⌜대학생의 스마트폰 사용보상 경험이 스마트폰 중독 경향성에 미치는 영향 : 대인관계 지향성에 의해 조절된 자기 조절력의 매개효과⌟, 학습자중심교과교육연구, 2024</p>\n
             <p class="small-font">천혜영,  ⌜중년기 성인의 행복, 자아존중감, 사회적 지지가 스마트폰 중독에 미치는 영향⌟, 꽃동네대학교 사회복지협력대학원, 2020</p>
              """, unsafe_allow_html=True)
-
 def solution_adult_normal():
     st.markdown("---")
     st.subheader("""
@@ -326,24 +325,46 @@ else:
     if age > 9 and age <= 19:
         overdose_adult_teen(total_score_adult)
         dash_adult_teens()
+        if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
+            prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
+            response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
+            image_url = response.data[0].url
+
+            # 이미지를 가져와서 Streamlit에 표시
+            image = Image.open(requests.get(image_url, stream=True).raw)
+            st.markdown("---")
+            with st.expander('당신이 계속 스마트폰을 사용한다면..', expanded=True):
+                st.image(image, caption='Generated Image', use_column_width=True)
+            st.markdown("---")
     elif age > 19 and age < 60:
         overdose_adult(total_score_adult)
         dash_adult()
+        if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
+            prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
+            response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
+            image_url = response.data[0].url
+
+            # 이미지를 가져와서 Streamlit에 표시
+            image = Image.open(requests.get(image_url, stream=True).raw)
+            st.markdown("---")
+            with st.expander('당신이 계속 스마트폰을 사용한다면..', expanded=True):
+                st.image(image, caption='Generated Image', use_column_width=True)
+            st.markdown("---")
     elif age >= 60:
         overdose_adult_senior(total_score_adult)
         dash_adult_senior()
+        if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
+            prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
+            response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
+            image_url = response.data[0].url
 
-    if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
-        prompt = "나이가 " + str(age) + "살이고 스마트폰에 중독되어서 허리가 굽었고 다크서클이 턱까지 내려와서 폐인이 되어버린 " + sex + "자를 완전 무섭고 과장해서 그려줘"
-        response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
-        image_url = response.data[0].url
+            # 이미지를 가져와서 Streamlit에 표시
+            image = Image.open(requests.get(image_url, stream=True).raw)
+            st.markdown("---")
+            with st.expander('당신이 계속 스마트폰을 사용한다면..', expanded=True):
+                st.image(image, caption='Generated Image', use_column_width=True)
+            st.markdown("---")
 
-        # 이미지를 가져와서 Streamlit에 표시
-        image = Image.open(requests.get(image_url, stream=True).raw)
-        st.markdown("---")
-        with st.expander('당신이 계속 스마트폰을 사용한다면..', expanded=True):
-            st.image(image, caption='Generated Image', use_column_width=True)
-        st.markdown("---")
 
 if total_score :
     if total_score >= 24:
