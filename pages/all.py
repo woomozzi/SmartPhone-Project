@@ -1,13 +1,14 @@
 import streamlit as st
 import os
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 
+
 def main():
-    st.title("요약정리")
+    st.title("PDF Viewer with Streamlit")
 
     # PDF 파일 경로
-    pdf_path = "data/project2_포폴.pdf"
+    pdf_path = "path/to/your/pdf/file.pdf"
 
     # PDF 파일이 존재하는지 확인
     if not os.path.exists(pdf_path):
@@ -16,8 +17,8 @@ def main():
 
     # PDF 파일 정보 가져오기
     with open(pdf_path, "rb") as f:
-        pdf_reader = PdfFileReader(f)
-        num_pages = pdf_reader.numPages
+        pdf_reader = PdfReader(f)
+        num_pages = len(pdf_reader.pages)
 
     st.write(f"Number of Pages: {num_pages}")
 
