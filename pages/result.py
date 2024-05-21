@@ -9,7 +9,6 @@ import openai
 import requests
 import os
 
-
 st.markdown("""
 <style>
 .small-font {
