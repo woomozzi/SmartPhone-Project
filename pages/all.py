@@ -5,10 +5,10 @@ from pdf2image import convert_from_path
 
 
 def main():
-    st.title("PDF Viewer with Streamlit")
+    st.title("프로젝트 요약")
 
     # PDF 파일 경로
-    pdf_path = "data\project2_포폴.pdf"
+    pdf_path = "data/project2_포폴.pdf"
 
     # PDF 파일이 존재하는지 확인
     if not os.path.exists(pdf_path):
