@@ -5,4 +5,3 @@
 
 ### Web Link
 
-[project2_포폴.pdf](https://github.com/woomozzi/SmartPhone-Project/files/15399769/project2_.pdf)
