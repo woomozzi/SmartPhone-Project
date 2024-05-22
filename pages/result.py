@@ -310,7 +310,7 @@ if total_score:
     overdose_kids(total_score)
     dash_kids()
     if total_score >= 24:  # 과의존 위험군인 경우에만 이미지 생성
-        prompt = "스마트폰 중독에 관한 경각심을 주는 이미지를 생성할거야. 너는 나이가 " + str(age) + "살인 " + sex + "자아이를 스마트폰 중독때문에 기괴하게 변하여 사용자들이 경각심을 느낄수 있게 이미지를 생성해줘"
+        prompt = "스마트폰 중독에 관한 경각심을 주는 이미지를 생성할거야. 너는 나이가 " + str(age) + "살인 " + sex + "자아이를 스마트폰 중독때문에 모습이 변하여 사용자들이 경각심을 느낄수 있게 이미지를 생성해줘"
         response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
         image_url = response.data[0].url
 
@@ -326,7 +326,7 @@ if total_score_adult:
         overdose_adult_teen(total_score_adult)
         dash_adult_teens()
         if total_score_adult >= 24:  # 과의존 위험군인 경우에만 이미지 생성
-            prompt = "스마트폰 중독에 관한 경각심을 주는 이미지를 생성할거야. 너는 나이가 " + str(age) + "살인 " + sex + "자를 스마트폰 중독때문에 기괴하게 변하여 사용자들이 경각심을 느낄수 있게 이미지를 생성해줘"
+            prompt = "스마트폰 중독에 관한 경각심을 주는 이미지를 생성할거야. 너는 나이가 " + str(age) + "살인 " + sex + "자를 스마트폰 중독때문에 모습이 변하여 사용자들이 경각심을 느낄수 있게 이미지를 생성해줘"
             response = openai.images.generate(model="dall-e-3", prompt=prompt, size="1024x1024", quality="standard", n=1)
             image_url = response.data[0].url
 
